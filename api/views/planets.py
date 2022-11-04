@@ -4,5 +4,5 @@ from ..serializers import PlanetsSerializer
 
 class PlanetsViewset(viewsets.ModelViewSet):
     queryset = Planets.objects.all()
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated,]
     serializer_class = PlanetsSerializer

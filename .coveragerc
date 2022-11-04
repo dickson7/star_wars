@@ -1,0 +1,9 @@
+[run]
+omit=
+    */venv/*
+    */tests/*
+    */staticfiles/*
+    */migrations/*
+    */api/views/collet.py
+    */__init__.py
+    

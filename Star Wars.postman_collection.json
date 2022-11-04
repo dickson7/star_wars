@@ -1,0 +1,1713 @@
+{
+	"info": {
+		"_postman_id": "2e1100c5-deec-4525-a803-fdf597316dd4",
+		"name": "Star Wars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17990568"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"test\",\n    \"email\": \"test@q2.com\",\n    \"password\": \"q1w2e3r4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"q1\",\n    \"email\": \"q1@q1.com\",\n    \"password\": \"q1w2e3r4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 02:47:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ]\n}"
+						},
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"test\",\n    \"email\": \"test@q2.com\",\n    \"password\": \"q1w2e3r4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 02:48:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"test\",\n    \"email\": \"test@q2.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"test\",\n    \"password\": \"q1w2e3r4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"test\",\n    \"password\": \"q1w2e3r4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 02:55:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "211"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"test@q2.com\",\n    \"username\": \"test\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjEzMzQ4fQ.R9-JNP25umUrcGA6Zto6ZCvFCwWvXGYiEcVNo5f0yiA\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "filter people",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/search_people/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"search_people",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Anakin Skywalker",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTPS_200_OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/search_people/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"search_people",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Anakin Skywalker",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:41:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24573"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"name\": \"Anakin Skywalker\",\n        \"height\": \"188\",\n        \"mass\": \"84\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['1']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"4\",\n                \"details\": {\n                    \"title\": \"The Phantom Menace\",\n                    \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"5\",\n                \"details\": {\n                    \"title\": \"Attack of the Clones\",\n                    \"opening_crawl\": \"There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Wilhuff Tarkin\",\n        \"height\": \"180\",\n        \"mass\": \"unknown\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['21']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 13,\n        \"name\": \"Chewbacca\",\n        \"height\": \"228\",\n        \"mass\": \"112\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['14']\",\n        \"species\": \"['3']\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"2\",\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Han Solo\",\n        \"height\": \"180\",\n        \"mass\": \"80\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['22']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"2\",\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 15,\n        \"name\": \"Greedo\",\n        \"height\": \"173\",\n        \"mass\": \"74\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['23']\",\n        \"species\": \"['4']\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 16,\n        \"name\": \"Jabba Desilijic Tiure\",\n        \"height\": \"175\",\n        \"mass\": \"1,358\",\n        \"gender\": \"hermaphrodite\",\n        \"homeworld\": \"['24']\",\n        \"species\": \"['5']\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"4\",\n                \"details\": {\n                    \"title\": \"The Phantom Menace\",\n                    \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 18,\n        \"name\": \"Wedge Antilles\",\n        \"height\": \"170\",\n        \"mass\": \"77\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['22']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"2\",\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 19,\n        \"name\": \"Jek Tono Porkins\",\n        \"height\": \"180\",\n        \"mass\": \"110\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['26']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"1\",\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 20,\n        \"name\": \"Yoda\",\n        \"height\": \"66\",\n        \"mass\": \"17\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['28']\",\n        \"species\": \"['6']\",\n        \"films\": [\n            {\n                \"film\": \"2\",\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"4\",\n                \"details\": {\n                    \"title\": \"The Phantom Menace\",\n                    \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"5\",\n                \"details\": {\n                    \"title\": \"Attack of the Clones\",\n                    \"opening_crawl\": \"There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 21,\n        \"name\": \"Palpatine\",\n        \"height\": \"170\",\n        \"mass\": \"75\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['8']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"2\",\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": \"3\",\n                \"details\": {\n                    \"title\": \"Return of the Jedi\",\n                    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n                    \"director\": \"Richard Marquand\",\n                    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"4\",\n                \"details\": {\n                    \"title\": \"The Phantom Menace\",\n                    \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"5\",\n                \"details\": {\n                    \"title\": \"Attack of the Clones\",\n                    \"opening_crawl\": \"There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 22,\n        \"name\": \"Tama\",\n        \"height\": \"229\",\n        \"mass\": \"88\",\n        \"gender\": \"male\",\n        \"homeworld\": \"10\",\n        \"species\": \"32\",\n        \"films\": [\n            {\n                \"film\": 2,\n                \"details\": {\n                    \"title\": \"The Empire Strikes Back\",\n                    \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n                    \"director\": \"Irvin Kershner\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": []\n                }\n            },\n            {\n                \"film\": 1,\n                \"details\": {\n                    \"title\": \"A New Hope\",\n                    \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Gary Kurtz, Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\"\n                    ]\n                }\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "HTTP_200_OK_FILTER_NAME",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/search_people/?name=Anakin Skywalker",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"search_people",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Anakin Skywalker"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:41:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2294"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"name\": \"Anakin Skywalker\",\n        \"height\": \"188\",\n        \"mass\": \"84\",\n        \"gender\": \"male\",\n        \"homeworld\": \"['1']\",\n        \"species\": \"[]\",\n        \"films\": [\n            {\n                \"film\": \"4\",\n                \"details\": {\n                    \"title\": \"The Phantom Menace\",\n                    \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"5\",\n                \"details\": {\n                    \"title\": \"Attack of the Clones\",\n                    \"opening_crawl\": \"There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\"\n                    ]\n                }\n            },\n            {\n                \"film\": \"6\",\n                \"details\": {\n                    \"title\": \"Revenge of the Sith\",\n                    \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n                    \"director\": \"George Lucas\",\n                    \"producer\": \"Rick McCallum\",\n                    \"planets\": [\n                        \"Tatooine\",\n                        \"Naboo\",\n                        \"Kashyyyk\"\n                    ]\n                }\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "HTTP_404_NOT_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/people/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"people",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 03:42:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						},
+						{
+							"name": "HTTP_403_Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/search_people/?name=Lama Su",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"search_people",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Lama Su"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 02:53:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add people",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tama\",\n    \"height\": \"229\",\n    \"mass\": \"88\",\n    \"gender\": \"male\",\n    \"homeworld\": \"10\",\n    \"films\": \"[2, 1]\",\n    \"species\": \"32\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/people/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"people",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Lama Su\",\n    \"height\": \"229\",\n    \"mass\": \"88\",\n    \"gender\": \"male\",\n    \"homeworld\": \"10\",\n    \"films\": \"5\",\n    \"species\": \"32\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/people/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"people",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 03:39:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"name\": \"Lama Su\",\n    \"height\": \"229\",\n    \"mass\": \"88\",\n    \"gender\": \"male\",\n    \"homeworld\": \"10\",\n    \"films\": \"5\",\n    \"species\": \"32\"\n}"
+						}
+					]
+				},
+				{
+					"name": "planets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/planets/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"planets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/planets/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"planets",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:40:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2900"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Tatooine\",\n        \"rotation_period\": \"23\",\n        \"orbital_period\": \"304\",\n        \"diameter\": \"10465\",\n        \"climate\": \"arid\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"desert\",\n        \"surface_water\": \"1\",\n        \"population\": \"200000\",\n        \"residents\": \"['', '', '', '', '', '', '', '', '', '']\",\n        \"films\": \"['1', '3', '4', '5', '6']\"\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Naboo\",\n        \"rotation_period\": \"26\",\n        \"orbital_period\": \"312\",\n        \"diameter\": \"12120\",\n        \"climate\": \"temperate\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"grassy hills, swamps, forests, mountains\",\n        \"surface_water\": \"12\",\n        \"population\": \"4500000000\",\n        \"residents\": \"['', '', '', '', '', '', '', '', '', '', '']\",\n        \"films\": \"['3', '4', '5', '6']\"\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Kashyyyk\",\n        \"rotation_period\": \"26\",\n        \"orbital_period\": \"381\",\n        \"diameter\": \"12765\",\n        \"climate\": \"tropical\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"jungle, forests, lakes, rivers\",\n        \"surface_water\": \"60\",\n        \"population\": \"45000000\",\n        \"residents\": \"['', '']\",\n        \"films\": \"['6']\"\n    },\n    {\n        \"id\": 21,\n        \"name\": \"Eriadu\",\n        \"rotation_period\": \"24\",\n        \"orbital_period\": \"360\",\n        \"diameter\": \"13490\",\n        \"climate\": \"polluted\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"cityscape\",\n        \"surface_water\": \"unknown\",\n        \"population\": \"22000000000\",\n        \"residents\": \"['']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 22,\n        \"name\": \"Corellia\",\n        \"rotation_period\": \"25\",\n        \"orbital_period\": \"329\",\n        \"diameter\": \"11000\",\n        \"climate\": \"temperate\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"plains, urban, hills, forests\",\n        \"surface_water\": \"70\",\n        \"population\": \"3000000000\",\n        \"residents\": \"['', '']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 23,\n        \"name\": \"Rodia\",\n        \"rotation_period\": \"29\",\n        \"orbital_period\": \"305\",\n        \"diameter\": \"7549\",\n        \"climate\": \"hot\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"jungles, oceans, urban, swamps\",\n        \"surface_water\": \"60\",\n        \"population\": \"1300000000\",\n        \"residents\": \"['']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 24,\n        \"name\": \"Nal Hutta\",\n        \"rotation_period\": \"87\",\n        \"orbital_period\": \"413\",\n        \"diameter\": \"12150\",\n        \"climate\": \"temperate\",\n        \"gravity\": \"1 standard\",\n        \"terrain\": \"urban, oceans, swamps, bogs\",\n        \"surface_water\": \"unknown\",\n        \"population\": \"7000000000\",\n        \"residents\": \"['']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 26,\n        \"name\": \"Bestine IV\",\n        \"rotation_period\": \"26\",\n        \"orbital_period\": \"680\",\n        \"diameter\": \"6400\",\n        \"climate\": \"temperate\",\n        \"gravity\": \"unknown\",\n        \"terrain\": \"rocky islands, oceans\",\n        \"surface_water\": \"98\",\n        \"population\": \"62000000\",\n        \"residents\": \"['']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 28,\n        \"name\": \"unknown\",\n        \"rotation_period\": \"0\",\n        \"orbital_period\": \"0\",\n        \"diameter\": \"0\",\n        \"climate\": \"unknown\",\n        \"gravity\": \"unknown\",\n        \"terrain\": \"unknown\",\n        \"surface_water\": \"unknown\",\n        \"population\": \"unknown\",\n        \"residents\": \"['', '', '', '', '']\",\n        \"films\": \"[]\"\n    },\n    {\n        \"id\": 29,\n        \"name\": \"Hoth test\",\n        \"rotation_period\": \"23\",\n        \"orbital_period\": \"549\",\n        \"diameter\": \"7200\",\n        \"climate\": \"frozen\",\n        \"gravity\": \"1.1 standard\",\n        \"terrain\": \"tundra, ice caves, mountain ranges\",\n        \"surface_water\": \"100\",\n        \"population\": \"unknown\",\n        \"residents\": \"[]\",\n        \"films\": \"[2]\"\n    },\n    {\n        \"id\": 30,\n        \"name\": \"Hoth test\",\n        \"rotation_period\": \"23\",\n        \"orbital_period\": \"549\",\n        \"diameter\": \"7200\",\n        \"climate\": \"frozen\",\n        \"gravity\": \"1.1 standard\",\n        \"terrain\": \"tundra, ice caves, mountain ranges\",\n        \"surface_water\": \"100\",\n        \"population\": \"unknown\",\n        \"residents\": \"[]\",\n        \"films\": \"[2]\"\n    }\n]"
+						},
+						{
+							"name": "HTTP_200_OK_FILTER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/planets/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"planets",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 06:46:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Hoth\",\n    \"rotation_period\": \"23\",\n    \"orbital_period\": \"549\",\n    \"diameter\": \"7200\",\n    \"climate\": \"frozen\",\n    \"gravity\": \"1.1 standard\",\n    \"terrain\": \"tundra, ice caves, mountain ranges\",\n    \"surface_water\": \"100\",\n    \"population\": \"unknown\",\n    \"residents\": \"[]\",\n    \"films\": \"[2]\"\n}"
+						},
+						{
+							"name": "HTTP_404_NO_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/planets/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"planets",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 06:47:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add planets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Hoth test\",\n\t\"rotation_period\": \"23\",\n\t\"orbital_period\": \"549\",\n\t\"diameter\": \"7200\",\n\t\"climate\": \"frozen\",\n\t\"gravity\": \"1.1 standard\",\n\t\"terrain\": \"tundra, ice caves, mountain ranges\",\n\t\"surface_water\": \"100\",\n\t\"population\": \"unknown\",\n    \"residents\": \"[]\",\n\t\"films\": \"[2]\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/planets/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"planets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hoth test\",\n\t\"rotation_period\": \"23\",\n\t\"orbital_period\": \"549\",\n\t\"diameter\": \"7200\",\n\t\"climate\": \"frozen\",\n\t\"gravity\": \"1.1 standard\",\n\t\"terrain\": \"tundra, ice caves, mountain ranges\",\n\t\"surface_water\": \"100\",\n\t\"population\": \"unknown\",\n    \"residents\": \"[]\",\n\t\"films\": \"[2]\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/planets/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"planets",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:39:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 30,\n    \"name\": \"Hoth test\",\n    \"rotation_period\": \"23\",\n    \"orbital_period\": \"549\",\n    \"diameter\": \"7200\",\n    \"climate\": \"frozen\",\n    \"gravity\": \"1.1 standard\",\n    \"terrain\": \"tundra, ice caves, mountain ranges\",\n    \"surface_water\": \"100\",\n    \"population\": \"unknown\",\n    \"residents\": \"[]\",\n    \"films\": \"[2]\"\n}"
+						},
+						{
+							"name": "HTTP_403_Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hoth\",\n\t\"rotation_period\": \"23\",\n\t\"orbital_period\": \"549\",\n\t\"diameter\": \"7200\",\n\t\"climate\": \"frozen\",\n\t\"gravity\": \"1.1 standard\",\n\t\"terrain\": \"tundra, ice caves, mountain ranges\",\n\t\"surface_water\": \"100\",\n\t\"population\": \"unknown\",\n    \"residents\": \"[]\",\n\t\"films\": \"[2]\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/planets/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"planets",
+										""
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 22:24:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "films",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/films/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"films",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/films/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"films",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:39:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5030"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"A New Hope\",\n        \"episode_id\": \"4\",\n        \"opening_crawl\": \"It is a period of civil war.\\r\\nRebel spaceships, striking\\r\\nfrom a hidden base, have won\\r\\ntheir first victory against\\r\\nthe evil Galactic Empire.\\r\\n\\r\\nDuring the battle, Rebel\\r\\nspies managed to steal secret\\r\\nplans to the Empire's\\r\\nultimate weapon, the DEATH\\r\\nSTAR, an armored space\\r\\nstation with enough power\\r\\nto destroy an entire planet.\\r\\n\\r\\nPursued by the Empire's\\r\\nsinister agents, Princess\\r\\nLeia races home aboard her\\r\\nstarship, custodian of the\\r\\nstolen plans that can save her\\r\\npeople and restore\\r\\nfreedom to the galaxy....\",\n        \"director\": \"George Lucas\",\n        \"producer\": \"Gary Kurtz, Rick McCallum\",\n        \"planets\": \"['1', '2', '3']\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"The Empire Strikes Back\",\n        \"episode_id\": \"5\",\n        \"opening_crawl\": \"It is a dark time for the\\r\\nRebellion. Although the Death\\r\\nStar has been destroyed,\\r\\nImperial troops have driven the\\r\\nRebel forces from their hidden\\r\\nbase and pursued them across\\r\\nthe galaxy.\\r\\n\\r\\nEvading the dreaded Imperial\\r\\nStarfleet, a group of freedom\\r\\nfighters led by Luke Skywalker\\r\\nhas established a new secret\\r\\nbase on the remote ice world\\r\\nof Hoth.\\r\\n\\r\\nThe evil lord Darth Vader,\\r\\nobsessed with finding young\\r\\nSkywalker, has dispatched\\r\\nthousands of remote probes into\\r\\nthe far reaches of space....\",\n        \"director\": \"Irvin Kershner\",\n        \"producer\": \"Gary Kurtz, Rick McCallum\",\n        \"planets\": \"['4', '5', '6', '27']\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Return of the Jedi\",\n        \"episode_id\": \"6\",\n        \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n        \"director\": \"Richard Marquand\",\n        \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n        \"planets\": \"['1', '5', '7', '8', '9']\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"The Phantom Menace\",\n        \"episode_id\": \"1\",\n        \"opening_crawl\": \"Turmoil has engulfed the\\r\\nGalactic Republic. The taxation\\r\\nof trade routes to outlying star\\r\\nsystems is in dispute.\\r\\n\\r\\nHoping to resolve the matter\\r\\nwith a blockade of deadly\\r\\nbattleships, the greedy Trade\\r\\nFederation has stopped all\\r\\nshipping to the small planet\\r\\nof Naboo.\\r\\n\\r\\nWhile the Congress of the\\r\\nRepublic endlessly debates\\r\\nthis alarming chain of events,\\r\\nthe Supreme Chancellor has\\r\\nsecretly dispatched two Jedi\\r\\nKnights, the guardians of\\r\\npeace and justice in the\\r\\ngalaxy, to settle the conflict....\",\n        \"director\": \"George Lucas\",\n        \"producer\": \"Rick McCallum\",\n        \"planets\": \"['1', '8', '9']\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Attack of the Clones\",\n        \"episode_id\": \"2\",\n        \"opening_crawl\": \"There is unrest in the Galactic\\r\\nSenate. Several thousand solar\\r\\nsystems have declared their\\r\\nintentions to leave the Republic.\\r\\n\\r\\nThis separatist movement,\\r\\nunder the leadership of the\\r\\nmysterious Count Dooku, has\\r\\nmade it difficult for the limited\\r\\nnumber of Jedi Knights to maintain \\r\\npeace and order in the galaxy.\\r\\n\\r\\nSenator Amidala, the former\\r\\nQueen of Naboo, is returning\\r\\nto the Galactic Senate to vote\\r\\non the critical issue of creating\\r\\nan ARMY OF THE REPUBLIC\\r\\nto assist the overwhelmed\\r\\nJedi....\",\n        \"director\": \"George Lucas\",\n        \"producer\": \"Rick McCallum\",\n        \"planets\": \"['1', '8', '9', '10', '11']\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Revenge of the Sith\",\n        \"episode_id\": \"3\",\n        \"opening_crawl\": \"War! The Republic is crumbling\\r\\nunder attacks by the ruthless\\r\\nSith Lord, Count Dooku.\\r\\nThere are heroes on both sides.\\r\\nEvil is everywhere.\\r\\n\\r\\nIn a stunning move, the\\r\\nfiendish droid leader, General\\r\\nGrievous, has swept into the\\r\\nRepublic capital and kidnapped\\r\\nChancellor Palpatine, leader of\\r\\nthe Galactic Senate.\\r\\n\\r\\nAs the Separatist Droid Army\\r\\nattempts to flee the besieged\\r\\ncapital with their valuable\\r\\nhostage, two Jedi Knights lead a\\r\\ndesperate mission to rescue the\\r\\ncaptive Chancellor....\",\n        \"director\": \"George Lucas\",\n        \"producer\": \"Rick McCallum\",\n        \"planets\": \"['1', '2', '5', '8', '9', '12', '13', '14', '15', '16', '17', '18', '19']\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Return of the Jedi\",\n        \"episode_id\": \"6\",\n        \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n        \"director\": \"Richard Marquand\",\n        \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n        \"planets\": \"[1, 2 , 7 , 8, 9]\"\n    }\n]"
+						},
+						{
+							"name": "HTTP_200_OK_FILTER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/films/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"films",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 07:25:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "708"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Return of the Jedi\",\n    \"episode_id\": \"6\",\n    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n    \"director\": \"Richard Marquand\",\n    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n    \"planets\": \"[1, 5 , 7 , 8, 9]\"\n}"
+						},
+						{
+							"name": "HTTP_404_NO_FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/films/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"films",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 07:26:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add films",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Return of the Jedi\",\n\t\"episode_id\": 6,\n\t\"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n\t\"director\": \"Richard Marquand\",\n\t\"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n    \"planets\": \"[1, 2 , 7 , 8, 9]\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/films/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"films",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Return of the Jedi\",\n\t\"episode_id\": 6,\n\t\"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n\t\"director\": \"Richard Marquand\",\n\t\"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n    \"planets\": \"[1, 2 , 7 , 8, 9]\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/films/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"films",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:38:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "708"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"name\": \"Return of the Jedi\",\n    \"episode_id\": \"6\",\n    \"opening_crawl\": \"Luke Skywalker has returned to\\r\\nhis home planet of Tatooine in\\r\\nan attempt to rescue his\\r\\nfriend Han Solo from the\\r\\nclutches of the vile gangster\\r\\nJabba the Hutt.\\r\\n\\r\\nLittle does Luke know that the\\r\\nGALACTIC EMPIRE has secretly\\r\\nbegun construction on a new\\r\\narmored space station even\\r\\nmore powerful than the first\\r\\ndreaded Death Star.\\r\\n\\r\\nWhen completed, this ultimate\\r\\nweapon will spell certain doom\\r\\nfor the small band of rebels\\r\\nstruggling to restore freedom\\r\\nto the galaxy...\",\n    \"director\": \"Richard Marquand\",\n    \"producer\": \"Howard G. Kazanjian, George Lucas, Rick McCallum\",\n    \"planets\": \"[1, 2 , 7 , 8, 9]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "collet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAcTIuY29tIiwiZXhwIjoxNjY3NjM3MjU4fQ.2R5F_y2cVVPRbZ_0yhTNYwj4zFu854HOfH_T9c39bOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/collet",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"collet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HTTP_200_OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/collet",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"collet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 09:34:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Done\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InExIiwiZW1haWwiOiJxMUBxMS5jb20iLCJleHAiOjE2Njc2MDM4OTl9.zcCjyxR_r8Dp8dNJLj8JrzBKhMV_ehZx9BUcbQgsd_0"
+		}
+	]
+}

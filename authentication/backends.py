@@ -26,5 +26,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         except jwt.ExpiredSignatureError as identifier:
             raise exceptions.AuthenticationFailed(
                 'Your token is expired,login')
-
+        except Exception as e:
+            raise exceptions.AuthenticationFailed(
+                'Your token is expired,login')
         return super().authenticate(request)

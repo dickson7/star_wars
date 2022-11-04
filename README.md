@@ -9,6 +9,15 @@ Adiconal se puede agregar y consultar los modelos Planetas, Personajes y Pelicul
 
 No se puede hacer uso de la api sin Bearer Token, una ves registrado, puede iniciar sesión y se le asignara el token. 
 
+# 
+
+<aside>
+💡
+El endpoint collet realiza una descarga de información desde el servicio de SWAPI, y se almacena en los modelos para ser consumido por los endpoints. Si bien se pueden agregar datos desde cada endpoint, se recomiendo, luego del registro realizar la ejecución de este endpoint para tener mas datos.
+</aside>
+
+# 
+
 ### Instalación 🔧
 
 Para realizar la instalación se deben seguir los siguientes pasos,
@@ -36,6 +45,9 @@ _Instalamos las dependencias con pip_
 ```shell
 (env)$ pip3 install -r requirements.txt
 ```
+
+_Configuramos las variables de entorno con el .env.example_
+
 
 _Lanzamos migraciones_
 

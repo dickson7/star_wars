@@ -13,7 +13,7 @@ No se puede hacer uso de la api sin Bearer Token, una ves registrado, puede inic
 
 <aside>
 💡
-El endpoint collet realiza una descarga de información desde el servicio de SWAPI, y se almacena en los modelos para ser consumido por los endpoints. Si bien se pueden agregar datos desde cada endpoint, se recomiendo, luego del registro realizar la ejecución de este endpoint para tener mas datos.
+El endpoint collet realiza una descarga de información desde el servicio de SWAPI, y se almacena en los modelos para ser consumido por los endpoints. Si bien se pueden agregar datos desde cada endpoint, se recomienda, luego del registro realizar la ejecución de este endpoint para tener mas datos.
 </aside>
 
 # 

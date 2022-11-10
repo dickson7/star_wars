@@ -10,10 +10,18 @@ Adiconal se puede agregar y consultar los modelos Planetas, Personajes y Pelicul
 No se puede hacer uso de la api sin Bearer Token, una ves registrado, puede iniciar sesión y se le asignara el token. 
 
 # 
+### Dos formas de cargar datos en los modelos
 
 <aside>
 💡
-El endpoint collet realiza una descarga de información desde el servicio de SWAPI, y se almacena en los modelos para ser consumido por los endpoints. Si bien se pueden agregar datos desde cada endpoint, se recomienda, luego del registro realizar la ejecución de este endpoint para tener mas datos.
+Ejecutar manage.py loaddata para cargar los datos, mas adelate se muestra el comando completo.
+</aside>
+
+#
+
+<aside>
+💡
+El endpoint collet realiza una descarga de información desde el servicio de SWAPI, y se almacena en los modelos para ser consumido por los endpoints. 
 </aside>
 
 # 
@@ -54,6 +62,13 @@ _Lanzamos migraciones_
 ```shell
 (env)$ python3 manage.py makemigrations
 (env)$ python3 manage.py migrate
+```
+
+_Fixtures_
+```
+python manage.py loaddata fixtures/data_people.json
+python manage.py loaddata fixtures/data_planets.json
+python manage.py loaddata fixtures/data_films.json
 ```
 
 _Como último paso realizamos la ejecución del servidor_
